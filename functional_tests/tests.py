@@ -7,7 +7,6 @@ import unittest
 class NewVisitorTest(LiveServerTestCase):    
     def setUp(self):
         self.browser = webdriver.Firefox()
-        self.browser.implicitly_wait(3)
 
     def tearDown(self):
         self.browser.quit()
@@ -55,7 +54,7 @@ class NewVisitorTest(LiveServerTestCase):
         # The page updates again, and now shows both items on her list
         self.check_for_row_in_list_table('1: Buy peacock feathers')
         self.check_for_row_in_list_table('2: Use peacock feathers to make a fly')
-        
+
         # Now a new user, Francis, comes along to the site.
 
         ## We use a new browser session to make sure that no information
